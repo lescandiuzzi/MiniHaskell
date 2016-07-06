@@ -5,6 +5,9 @@ import br.unb.cic.mh.ExpressaoIfThenElse;
 import br.unb.cic.mh.ExpressaoLet;
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
+import br.unb.cic.mh.ExpressaoSubtracao;
+import br.unb.cic.mh.ExpressaoMultiplicacao;
+import br.unb.cic.mh.ExpressaoDivisao;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
 
@@ -29,6 +32,32 @@ public class PPVisitor implements Visitor {
 		exp.getSub2().aceitar(this);
 		System.out.println(")");
 	}
+
+	@Override
+	public void visitar (ExpressaoSubtracao exp){
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" - ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+	
+	public void visitar (ExpressaoMultiplicacao exp){
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" * ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+
+	public void visitar (ExpressaoDivisao exp){
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" / ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+
 
 	@Override
 	public void visitar(ExpressaoRefId exp) {
