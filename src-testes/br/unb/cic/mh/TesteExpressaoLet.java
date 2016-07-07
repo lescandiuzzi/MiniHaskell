@@ -37,7 +37,7 @@ public class TesteExpressaoLet {
 		ExpressaoLet letExterno = new ExpressaoLet("y", vi(15), letInterno);
 		assertEquals(vi(10), letExterno.avaliar());
 		
-	}
+	}	
 	
 	public ExpressaoSoma soma(Expressao exp1, Expressao exp2) {
 		return new ExpressaoSoma(exp1, exp2);

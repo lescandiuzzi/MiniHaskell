@@ -16,6 +16,7 @@ import br.unb.cic.mh.ExpressaoMultiplicacao;
 import br.unb.cic.mh.ExpressaoDivisao;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
+import br.unb.cic.mh.ValorLista;
 
 public class Adaptador implements Visitor {
 
@@ -88,6 +89,12 @@ public class Adaptador implements Visitor {
 
 	@Override
 	public void visitar(ExpressaoMaiorIgual exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ValorLista exp) {
 		// TODO Auto-generated method stub
 		
 	}

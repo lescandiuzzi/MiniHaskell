@@ -16,6 +16,7 @@ import br.unb.cic.mh.ExpressaoMultiplicacao;
 import br.unb.cic.mh.ExpressaoDivisao;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
+import br.unb.cic.mh.ValorLista;
 
 public class PPVisitor implements Visitor {
 
@@ -26,7 +27,11 @@ public class PPVisitor implements Visitor {
 
 	@Override
 	public void visitar(ExpressaoLet exp) {
-		// TODO Auto-generated method stub
+		System.out.print("Let");
+		//colocar o codigo
+		System.out.println(" = ");
+		//colocar o numero
+		System.out.println(" in ");
 		
 	}
 
@@ -149,6 +154,12 @@ public class PPVisitor implements Visitor {
 		System.out.println(" >= ");
 		exp.getSub2().aceitar(this);
 		System.out.println(")");
+		
+	}
+
+	@Override
+	public void visitar(ValorLista exp) {
+		// TODO Auto-generated method stub
 		
 	}
 

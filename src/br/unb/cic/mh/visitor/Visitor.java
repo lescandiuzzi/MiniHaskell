@@ -16,6 +16,7 @@ import br.unb.cic.mh.ExpressaoMultiplicacao;
 import br.unb.cic.mh.ExpressaoDivisao;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
+import br.unb.cic.mh.ValorLista;
 
 public interface Visitor {
 	public void visitar(ExpressaoIfThenElse exp);
@@ -34,4 +35,5 @@ public interface Visitor {
 	public void visitar(ExpressaoAplicacao exp);
 	public void visitar(ValorInteiro exp);
 	public void visitar(ValorBooleano exp);
+	public void visitar(ValorLista exp);
 }
