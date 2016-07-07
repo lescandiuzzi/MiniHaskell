@@ -1,8 +1,14 @@
 package br.unb.cic.mh.visitor;
 
 import br.unb.cic.mh.ExpressaoAplicacao;
+import br.unb.cic.mh.ExpressaoDiferente;
 import br.unb.cic.mh.ExpressaoIfThenElse;
+import br.unb.cic.mh.ExpressaoIgual;
 import br.unb.cic.mh.ExpressaoLet;
+import br.unb.cic.mh.ExpressaoMaior;
+import br.unb.cic.mh.ExpressaoMaiorIgual;
+import br.unb.cic.mh.ExpressaoMenor;
+import br.unb.cic.mh.ExpressaoMenorIgual;
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
@@ -48,6 +54,42 @@ public class Adaptador implements Visitor {
 
 	@Override
 	public void visitar(ValorBooleano exp) {
+	}
+
+	@Override
+	public void visitar(ExpressaoIgual exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoDiferente exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMenor exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMaior exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMenorIgual exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMaiorIgual exp) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

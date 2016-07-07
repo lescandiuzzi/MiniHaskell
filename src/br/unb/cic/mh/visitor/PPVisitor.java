@@ -1,8 +1,14 @@
 package br.unb.cic.mh.visitor;
 
 import br.unb.cic.mh.ExpressaoAplicacao;
+import br.unb.cic.mh.ExpressaoDiferente;
 import br.unb.cic.mh.ExpressaoIfThenElse;
+import br.unb.cic.mh.ExpressaoIgual;
 import br.unb.cic.mh.ExpressaoLet;
+import br.unb.cic.mh.ExpressaoMaior;
+import br.unb.cic.mh.ExpressaoMaiorIgual;
+import br.unb.cic.mh.ExpressaoMenor;
+import br.unb.cic.mh.ExpressaoMenorIgual;
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
@@ -84,6 +90,66 @@ public class PPVisitor implements Visitor {
 		else {
 			System.out.println("False");
 		}
+	}
+
+	@Override
+	public void visitar(ExpressaoIgual exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" == ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoDiferente exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" != ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMenor exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" < ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMaior exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" > ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMenorIgual exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" <= ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMaiorIgual exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" >= ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+		
 	}
 
 }
