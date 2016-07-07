@@ -9,10 +9,11 @@ public class TesteExpressaoLet {
 
 	@Test
 	public void testeExpressaoLetSimples() {
-		// let x = 10
+		// let x = 5
 		// in x + x
-		ExpressaoLet let1 = new ExpressaoLet("x", new ValorInteiro(5),
-				new ExpressaoSoma(new ExpressaoRefId("x"), new ExpressaoRefId("x")));
+		ExpressaoLet let1 = new ExpressaoLet("x",
+											new ValorInteiro(5),											
+											new ExpressaoSoma(new ExpressaoRefId("x"), new ExpressaoRefId("x")));
 
 		assertEquals(new ValorInteiro(10), let1.avaliar());
 	}
@@ -28,6 +29,14 @@ public class TesteExpressaoLet {
 		
 		
 		assertEquals(vi(15), letExterno.avaliar());
+	}
+	
+	@Test
+	public void testeExpressaoLetAninhada2(){
+		ExpressaoLet letInterno = new ExpressaoLet("x", vi(5), soma(ref("x"), ref("x"))); 
+		ExpressaoLet letExterno = new ExpressaoLet("y", vi(15), letInterno);
+		assertEquals(vi(10), letExterno.avaliar());
+		
 	}
 	
 	public ExpressaoSoma soma(Expressao exp1, Expressao exp2) {
