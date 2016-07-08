@@ -21,6 +21,10 @@ public abstract class ValorConcreto<T> implements Valor {
 	public T getValor() {
 		return valor;
 	}
+	
+	public void setValor(T valor) {
+		this.valor = valor;
+	}
 
 	@Override
 	public boolean equals(Object outroValor) {
