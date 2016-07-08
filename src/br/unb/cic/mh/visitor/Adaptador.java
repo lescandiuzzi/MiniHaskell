@@ -14,6 +14,9 @@ import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
 import br.unb.cic.mh.ExpressaoMultiplicacao;
 import br.unb.cic.mh.ExpressaoDivisao;
+import br.unb.cic.mh.ExpressaoOR;
+import br.unb.cic.mh.ExpressaoAND;
+import br.unb.cic.mh.ExpressaoNOT;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
 import br.unb.cic.mh.ValorLista;
@@ -40,6 +43,18 @@ public class Adaptador implements Visitor {
 	
 	public void visitar (ExpressaoDivisao exp){
 	}
+
+
+	public void visitar (ExpressaoOR exp){
+		
+	}
+	public void visitar (ExpressaoAND exp){
+		
+	}
+	public void visitar (ExpressaoNOT exp){
+		
+	}
+	
 
 	@Override
 	public void visitar(ExpressaoRefId exp) {
